@@ -1,0 +1,19 @@
+
+
+
+<form id="header" ng-submit="registerCtrl.register()">
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+    <div class="control-group">
+      <div class="wy-control">
+        <input id="form-style" type="text" placeholder="email" ng-model="registerCtrl.newUser.email"/>
+      </div>
+      <div class="wy-control">
+        <input type="password" placeholder="password" ng-model="registerCtrl.newUser.password"/>
+      </div>
+    </div>
+    <input type="submit" class="btn" />
+  </form>
+
+  <a id="alternate-option" href="https://www.google.com/">Already have an account? Login Here.</a>

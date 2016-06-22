@@ -2,7 +2,7 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Recipeezy</title>
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
@@ -10,5 +10,16 @@
     <div ui-view></div>
 
     <script src="js/app.js" charset="utf-8"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAJt8tb_M3T1ZaHO15ezhM59n4-ZHvexfs",
+        authDomain: "recipeezy-2a342.firebaseapp.com",
+        databaseURL: "https://recipeezy-2a342.firebaseio.com",
+        storageBucket: "recipeezy-2a342.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>
