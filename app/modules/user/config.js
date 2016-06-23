@@ -5,6 +5,7 @@ function config($stateProvider) {
     controller: "RegisterController as registerCtrl",
     template: require("./views/register.html")
   })
+  
 
 }
 

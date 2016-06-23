@@ -3,8 +3,9 @@ class UserService {
    this._$q = $q;
    this._$http = $http;
 
-   this.ref = new Firebase("https://recipeezy.firebaseio.com/");
+   this.ref = new Firebase("https://recipeezy-2a342.firebaseio.com");
    this.auth = $firebaseAuth(this.ref);
+   console.log('user service');
  }
 
    isLoggedIn() {

@@ -1,7 +1,13 @@
 
+<h1>Register</h1>
 
+<form ng-submit="registerCtrl.register()">
+  <input type='text' placeholder='email' ng-model="registerCtrl.newUser.email">
+  <input type='text' placeholder='password' ng-model="registerCtrl.newUser.password">
+  <input type='submit' value='submit'>
+</form>
 
-<form id="header" ng-submit="registerCtrl.register()">
+<!-- <form id="header" ng-submit="registerCtrl.register()">
   <header>
     <h1>Sign Up</h1>
   </header>
@@ -16,4 +22,4 @@
     <input type="submit" class="btn" />
   </form>
 
-  <a id="alternate-option" href="https://www.google.com/">Already have an account? Login Here.</a>
+  <a id="alternate-option" href="https://www.google.com/">Already have an account? Login Here.</a> -->
