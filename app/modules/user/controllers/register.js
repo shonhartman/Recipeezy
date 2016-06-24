@@ -7,7 +7,7 @@ class RegisterController {
 
   register() {
     this._UserService
-    .create(this.newUser)
+    .create(this.newUser.email, this.newUser.password)
     .then((response) => {
       // this._$state.go("profile");
       console.log("promise");

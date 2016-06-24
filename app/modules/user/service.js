@@ -1,9 +1,24 @@
 class UserService {
-  constructor($q, $firebaseAuth, $http) {
+  constructor($q, $firebaseAuth, $http,) {
    this._$q = $q;
    this._$http = $http;
 
-   this.ref = new Firebase("https://recipeezy-2a342.firebaseio.com");
+   //old ref
+  //  this.ref = new Firebase("https://recipeezy-2a342.firebaseio.com");
+
+   //new ref
+   var config = {
+  apiKey: "AIzaSyAJt8tb_M3T1ZaHO15ezhM59n4-ZHvexfs",
+  authDomain: "recipeezy-2a342.firebaseapp.com",
+  databaseURL: "https://recipeezy-2a342.firebaseio.com"
+};
+
+firebase.initializeApp(config);
+
+var rootRef = firebase.database().ref();
+
+
+   //auth
    this.auth = $firebaseAuth(this.ref);
    console.log('user service');
  }
@@ -18,7 +33,7 @@ class UserService {
 
   login(user) {
     return new this._$q((resolve, reject) => {
-      this.auth.$authWithPassword(user)
+      this.auth.$signInWithEmailAndPassword(user)
         .then((response) => {
           resolve(response);
         })
@@ -36,12 +51,12 @@ class UserService {
     }
   }
 
-  create(user) {
+  create(email, password) {
     return new this._$q((resolve, reject) => {
-      this.auth.$createUser(user)
+      this.auth.$createUserWithEmailAndPassword(email, password)
         .then((response) => {
           this.user = response;
-          return this.auth.$authWithPassword(user);
+          return this.auth.$signInWithEmailAndPassword(email, password);
         })
         .then((response) => {
           resolve(response);
